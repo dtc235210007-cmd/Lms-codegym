@@ -1,0 +1,269 @@
+/* ==========================================================================
+   BƯỚC 8: BẢNG MÀU ĐƠN TÔNG THỨ 2 (THEME CAM NẮNG - WARM ORANGE)
+   Màu chủ đạo (Bậc 1): #FF6B35 (Cam năng động)
+   Bảng màu đơn tông nhạt dần:
+   - Bậc 1: #FF6B35 (Màu chính - dùng cho phần ON SALE/PREVIEW)
+   - Bậc 2: #FF7E47
+   - Bậc 3: #FF915A
+   - Bậc 4: #FFA36C (Màu nền toàn trang web)
+   - Bậc 5: #FFB67F
+   - Bậc 6: #FFC891
+   - Bậc 7: #FFDBA4 (Màu nền phần nội dung - Content)
+   - Bậc 8: #FFE4BA
+   - Bậc 9: #FFF0D4 (Màu nền phần Footer)
+   - Bậc 10: #FFF8EE
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #000000;
+}
+
+body {
+    background-color: #FFA36C; /* Màu bậc 4 */
+    font-family: 'PT Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #000000;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.wrapper {
+    max-width: 980px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(100, 40, 0, 0.18);
+}
+
+header {
+    background-color: #ffffff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #FFDBA4;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Pacifico', cursive;
+    font-size: 26px;
+    color: #FF6B35; /* Bậc 1 */
+    text-decoration: none;
+}
+
+.logo svg {
+    width: 36px;
+    height: 36px;
+    fill: #FF6B35;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    color: #000000;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #FFDBA4; /* Bậc 7 */
+    color: #000000;
+}
+
+/* Phần ON SALE/PREVIEW: Bậc 1 (#FF6B35) */
+.sale,
+.on-sale,
+.preview,
+#sale,
+#preview {
+    background-color: #FF6B35; /* Bậc 1 */
+    padding: 40px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    border-bottom: 3px solid #FF7E47;
+}
+
+.sale-content {
+    flex: 1;
+}
+
+.sale-badge {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #FF6B35;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sale-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.sale-desc {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 20px;
+    max-width: 480px;
+}
+
+.sale-btn {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.sale-btn:hover {
+    transform: translateY(-2px);
+    background-color: #FFF0D4; /* Bậc 9 */
+}
+
+.sale-media {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.disc-cover {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #222 30%, #444 31%, #111 60%, #333 70%);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    border: 6px solid #ffffff;
+    position: relative;
+    animation: spin 12s linear infinite;
+}
+
+.disc-center {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #FF6B35;
+    border: 4px solid #ffffff;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* Phần Nội Dung: Bậc 7 (#FFDBA4) */
+.content,
+#content,
+.main-content {
+    background-color: #FFDBA4; /* Bậc 7 */
+    padding: 35px 30px;
+    color: #000000;
+}
+
+.content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #000000;
+    border-left: 5px solid #FF6B35;
+    padding-left: 12px;
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #FFE4BA;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-tag {
+    font-size: 12px;
+    font-weight: 700;
+    color: #FF6B35;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #000000;
+}
+
+.card p {
+    font-size: 14px;
+    color: #333333;
+    line-height: 1.5;
+}
+
+/* Phần Footer: Bậc 9 (#FFF0D4) */
+footer,
+.footer,
+#footer {
+    background-color: #FFF0D4; /* Bậc 9 */
+    padding: 25px 30px;
+    color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #FFDBA4;
+    font-size: 14px;
+}
+
+footer a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #FF6B35;
+}

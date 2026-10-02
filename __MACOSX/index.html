@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành phối màu đơn tông - CodeGym</title>
+    <link rel="stylesheet" href="style.css" id="theme-style">
+    <style>
+        .theme-switcher-bar {
+            background: #1e293b;
+            color: #ffffff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 13px;
+        }
+        .theme-switcher-bar * {
+            color: #ffffff;
+        }
+        .theme-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .btn-theme {
+            border: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            font-size: 13px;
+        }
+        .btn-theme:hover {
+            opacity: 0.9;
+        }
+        .btn-blue {
+            background-color: #00ADEE;
+            color: #ffffff !important;
+        }
+        .btn-orange {
+            background-color: #FF6B35;
+            color: #ffffff !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="theme-switcher-bar">
+        <span>🎨 <strong>CodeGym Bài thực hành phối màu đơn tông:</strong></span>
+        <div class="theme-buttons">
+            <button class="btn-theme btn-blue" onclick="switchTheme('style.css')">Theme 1: Xanh CodeGym (#00ADEE)</button>
+            <button class="btn-theme btn-orange" onclick="switchTheme('style-theme2.css')">Theme 2 (Bước 8): Cam Nắng (#FF6B35)</button>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <header>
+            <a href="#" class="logo">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                    <polygon points="10,8 16,12 10,16" fill="currentColor"/>
+                </svg>
+                CodeGym Audio
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Trang chủ</a></li>
+                    <li><a href="#">Album</a></li>
+                    <li><a href="#">Nghệ sĩ</a></li>
+                    <li><a href="#">Bảng xếp hạng</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Bước 3: Phần ON SALE / PREVIEW (Màu nền bậc 1: #00ADEE) -->
+        <section class="sale" id="sale">
+            <div class="sale-content">
+                <span class="sale-badge">On Sale / Preview</span>
+                <h1 class="sale-title">Hòa Tấu Mùa Hạ 2026</h1>
+                <p class="sale-desc">Khám phá album độc quyền với chất lượng âm thanh nguyên bản lossless. Thưởng thức trọn vẹn từng giai điệu ngọt ngào và sâu lắng.</p>
+                <a href="#buy" class="sale-btn">Nghe thử & Đặt mua</a>
+            </div>
+            <div class="sale-media">
+                <div class="disc-cover">
+                    <div class="disc-center"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bước 4: Phần Nội Dung (Màu nền bậc 7: #8DD7F7, Chữ màu đen) -->
+        <main class="content" id="content">
+            <h2>Danh Sách Bài Hát Nổi Bật</h2>
+            <div class="grid-cards">
+                <article class="card">
+                    <div class="card-tag">Track 01</div>
+                    <h3>01. Ánh Nắng Ban Mai</h3>
+                    <p>Giai điệu acoustic nhẹ nhàng mở đầu cho ngày mới tràn đầy năng lượng tích cực và tươi sáng.</p>
+                </article>
+                <article class="card">
+                    <div class="card-tag">Track 02</div>
+                    <h3>02. Khúc Ca Bên Bờ Biển</h3>
+                    <p>Sự kết hợp giữa tiếng sóng vỗ và tiếng đàn piano mang lại cảm giác bình yên thư thái.</p>
+                </article>
+                <article class="card">
+                    <div class="card-tag">Track 03</div>
+                    <h3>03. Chiều Hoàng Hôn Yên Ả</h3>
+                    <p>Bản phối jazz du dương với kèn saxophone, hoàn hảo cho những buổi chiều thư giãn cuối tuần.</p>
+                </article>
+            </div>
+        </main>
+
+        <!-- Bước 5: Phần Footer (Màu nền bậc 9: #C6E9FA, Chữ màu đen) -->
+        <footer id="footer">
+            <p>&copy; 2026 CodeGym Audio - Luyện tập phối màu đơn tông (Monochromatic Palette).</p>
+            <p><a href="#">Điều khoản sử dụng</a> | <a href="#">Chính sách bảo mật</a></p>
+        </footer>
+    </div>
+
+    <script>
+        function switchTheme(cssFile) {
+            document.getElementById('theme-style').setAttribute('href', cssFile);
+        }
+    </script>
+</body>
+</html>

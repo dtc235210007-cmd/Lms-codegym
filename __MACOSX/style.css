@@ -1,0 +1,282 @@
+/* ==========================================================================
+   BÀI THỰC HÀNH: PHỐI MÀU ĐƠN TÔNG (MONOCHROMATIC COLOR SCHEME)
+   Màu chủ đạo (Bậc 1): #00ADEE (Xanh logo CodeGym)
+   Bảng màu đơn tông nhạt dần:
+   - Bậc 1: #00ADEE (Màu chính - dùng cho phần ON SALE/PREVIEW)
+   - Bậc 2: #00B2EF
+   - Bậc 3: #00B8F1
+   - Bậc 4: #00BFF2 (Màu nền toàn trang web)
+   - Bậc 5: #33CBF5
+   - Bậc 6: #66D8F8
+   - Bậc 7: #8DD7F7 (Màu nền phần nội dung - Content)
+   - Bậc 8: #A6E0F8
+   - Bậc 9: #C6E9FA (Màu nền phần Footer)
+   - Bậc 10: #E6F5FC
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Bước 6: Giữ nguyên màu chữ cho toàn bộ trang là màu đen */
+    color: #000000;
+}
+
+/* Bước 2: Thay đổi màu nền web thành màu bậc 4 (#00BFF2), màu chữ màu đen */
+body {
+    background-color: #00BFF2; /* Màu bậc 4 */
+    font-family: 'PT Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #000000;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.wrapper {
+    max-width: 980px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 50, 100, 0.18);
+}
+
+header {
+    background-color: #ffffff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #8DD7F7;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Pacifico', cursive;
+    font-size: 26px;
+    color: #00ADEE; /* Màu bậc 1 */
+    text-decoration: none;
+}
+
+.logo svg {
+    width: 36px;
+    height: 36px;
+    fill: #00ADEE;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    color: #000000;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #8DD7F7; /* Bậc 7 */
+    color: #000000;
+}
+
+/* ==========================================================================
+   Bước 3: Thay đổi màu nền phần ON SALE/PREVIEW
+   Chuyển màu nền đỏ ban đầu -> tông màu bậc 1 (#00ADEE) hoặc bậc 2 (#00B2EF)
+   ========================================================================== */
+.sale,
+.on-sale,
+.preview,
+#sale,
+#preview {
+    background-color: #00ADEE; /* Đổi từ màu đỏ -> Bậc 1 (#00ADEE) */
+    padding: 40px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    border-bottom: 3px solid #00B2EF;
+}
+
+.sale-content {
+    flex: 1;
+}
+
+.sale-badge {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #00ADEE;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sale-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.sale-desc {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 20px;
+    max-width: 480px;
+}
+
+.sale-btn {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.sale-btn:hover {
+    transform: translateY(-2px);
+    background-color: #C6E9FA; /* Bậc 9 */
+}
+
+.sale-media {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.disc-cover {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #222 30%, #444 31%, #111 60%, #333 70%);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    border: 6px solid #ffffff;
+    position: relative;
+    animation: spin 12s linear infinite;
+}
+
+.disc-center {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #00ADEE;
+    border: 4px solid #ffffff;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   Bước 4: Đổi màu nền phần nội dung (Content)
+   Chuyển màu nền hồng ban đầu -> màu bậc 7 (#8DD7F7)
+   Màu chữ: Giữ màu đen (#000000) vì nền bậc 7 khá nhạt
+   ========================================================================== */
+.content,
+#content,
+.main-content {
+    background-color: #8DD7F7; /* Đổi từ màu hồng -> Bậc 7 (#8DD7F7) */
+    padding: 35px 30px;
+    color: #000000; /* Màu chữ đen */
+}
+
+.content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #000000;
+    border-left: 5px solid #00ADEE;
+    padding-left: 12px;
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #A6E0F8;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-tag {
+    font-size: 12px;
+    font-weight: 700;
+    color: #00ADEE;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #000000;
+}
+
+.card p {
+    font-size: 14px;
+    color: #333333;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   Bước 5: Đổi màu nền phần Footer
+   Chuyển sang màu bậc 9 (#C6E9FA) tạo độ sáng hài hòa cho trang
+   Màu chữ: màu đen (#000000)
+   ========================================================================== */
+footer,
+.footer,
+#footer {
+    background-color: #C6E9FA; /* Bậc 9 (#C6E9FA) */
+    padding: 25px 30px;
+    color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #8DD7F7;
+    font-size: 14px;
+}
+
+footer a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #00ADEE;
+}
